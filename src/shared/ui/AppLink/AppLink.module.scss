@@ -1,0 +1,28 @@
+.appLink {
+  padding: 4px 8px;
+
+  font-size: var(--font-size-s);
+  text-decoration: none;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  transition:  0.2s ease-in-out;
+}
+
+.primary {
+  color: var(--text-color);
+
+  &:hover {
+    border: 1px solid var(--text-color);
+  }
+}
+
+.secondary {
+  color: var(--secondary-text-color);
+
+
+  &:hover {
+    border: 1px solid var(--secondary-text-color);
+  }
+}
