@@ -1,0 +1,12 @@
+.themeSwitcher {
+
+  inline-size: 1.3rem;
+  block-size: 1.3rem;
+  aspect-ratio: 1;
+
+  cursor: pointer;
+
+  & svg {
+    fill: var(--text-color);  // Цвет иконки
+  }
+}
