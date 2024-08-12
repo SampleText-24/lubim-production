@@ -2,6 +2,12 @@ import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 
+/**
+ * Функция buildLoaders возвращает массив правил загрузчиков (loaders) для обработки различных типов файлов в проекте.
+ *
+ * @param options - Параметры конфигурации сборки, содержащие информацию о режиме сборки (development или production).
+ * @returns Массив правил загрузчиков для webpack.
+ */
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const svgLoader = {
