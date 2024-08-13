@@ -4,6 +4,7 @@ import './styles/index.scss'
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
 import {Sidebar} from "widgets/Sidebar";
+import {Suspense} from "react";
 
 
 const App = () => {
@@ -12,11 +13,13 @@ const App = () => {
     
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar />
-            <div className='contentPage'>
-                <AppRouter />
-                <Sidebar />
-            </div>
+            <Suspense fallback=''>
+                <Navbar />
+                <div className='contentPage'>
+                    <AppRouter />
+                    <Sidebar />
+                </div>
+            </Suspense>
         </div>
     );
 };

@@ -1,9 +1,10 @@
-import {FC} from "react";
+import React, {FC} from "react";
 import {AppLink} from "shared/ui/AppLink/AppLink";
 
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from './Navbar.module.scss';
 import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {LangSwitcher} from "widgets/LangSwitcher";
 
 interface NavbarProps {
     className?: string;
@@ -16,6 +17,7 @@ interface NavbarProps {
  * @param className - Дополнительный класс для стилизации Navbar.
  */
 export const Navbar: FC<NavbarProps> = ({className}) => {
+
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
             {/* Список навигационных ссылок */}
@@ -32,7 +34,9 @@ export const Navbar: FC<NavbarProps> = ({className}) => {
             <ul className={cls.icons}>
                 <li>ig</li>
                 <li>fb</li>
-                <li>yt</li>
+                <li>
+                    <LangSwitcher />
+                </li>
                 <li>
                     <ThemeSwitcher />
                 </li>
