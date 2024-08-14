@@ -3,10 +3,10 @@ import {useTranslation} from "react-i18next";
 
 const MainPage = () => {
 
-    const {t, i18n} = useTranslation('main')
+    const {t} = useTranslation('main')
 
     return (
-        <div>
+        <div> 
             {t('Главная страница')}
         </div>
     );
