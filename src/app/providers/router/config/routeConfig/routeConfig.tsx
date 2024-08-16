@@ -1,6 +1,6 @@
-import {RouteProps} from "react-router-dom";
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
+import { RouteProps } from 'react-router-dom';
+import { MainPage } from 'pages/MainPage';
+import { AboutPage } from 'pages/AboutPage';
 
 /**
  * Перечисление всех маршрутов в приложении.
@@ -18,7 +18,7 @@ export enum AppRoutes {
 export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
-}
+};
 
 /**
  * Конфигурация маршрутов, включающая путь и соответствующий React-компонент.
@@ -33,4 +33,4 @@ export const routerConfig: Record<AppRoutes, RouteProps> = {
         path: RouterPath.about,
         element: <AboutPage />,
     },
-}
+};

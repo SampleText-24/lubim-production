@@ -1,9 +1,9 @@
-import {Theme, useTheme} from 'app/providers/ThemeProvider';
-import cls from './ThemeSwitcher.module.scss'
-import {classNames} from "shared/lib/classNames/classNames";
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
+import cls from './ThemeSwitcher.module.scss';
+import { classNames } from 'shared/lib/classNames/classNames';
 import LightIcon from 'shared/assets/icons/sun.svg';
 import DarkIcon from 'shared/assets/icons/moon.svg';
-import {Button} from "shared/ui/Button/Button";
+import { Button } from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -16,9 +16,8 @@ interface ThemeSwitcherProps {
  *
  * @return Элемент кнопки переключения темы.
  */
-export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
-
-    const {theme, toggleTheme} = useTheme()
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <Button
@@ -26,12 +25,7 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
             className={classNames(cls.themeSwitcher, {}, [className])}
             title='switch theme'
         >
-            {theme === Theme.LIGHT
-                ? <DarkIcon />
-                : <LightIcon />
-            }
-
+            {theme === Theme.LIGHT ? <DarkIcon /> : <LightIcon />}
         </Button>
     );
 };
-

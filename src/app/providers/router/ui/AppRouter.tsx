@@ -1,6 +1,6 @@
-import {Suspense} from 'react';
-import {Route, Routes} from "react-router-dom";
-import {routerConfig} from "../config/routeConfig/routeConfig";
+import { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { routerConfig } from '../config/routeConfig/routeConfig';
 
 /**
  * Компонент AppRouter отвечает за маршрутизацию в приложении.
@@ -11,15 +11,11 @@ export const AppRouter = () => {
     return (
         <Suspense fallback={<div>L O A D I N G</div>}>
             <Routes>
-                {Object.values(routerConfig).map(({element, path}) => (
+                {Object.values(routerConfig).map(({ element, path }) => (
                     <Route
                         key={path}
                         path={path}
-                        element={
-                            <div className='pageWrapper'>
-                                {element}
-                            </div> 
-                        }
+                        element={<div className='pageWrapper'>{element}</div>}
                     />
                 ))}
             </Routes>

@@ -1,10 +1,10 @@
-import React, {FC} from "react";
-import {AppLink} from "shared/ui/AppLink/AppLink";
+import React, { FC } from 'react';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 
-import {classNames} from "shared/lib/classNames/classNames";
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
-import {LangSwitcher} from "widgets/LangSwitcher";
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
 
 interface NavbarProps {
     className?: string;
@@ -16,15 +16,20 @@ interface NavbarProps {
  *
  * @param className - Дополнительный класс для стилизации Navbar.
  */
-export const Navbar: FC<NavbarProps> = ({className}) => {
-
+export const Navbar: FC<NavbarProps> = ({ className }) => {
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
             {/* Список навигационных ссылок */}
             <ul className={cls.links}>
-                <li><AppLink to={'/'}>МАГАЗИН</AppLink></li>
-                <li><AppLink to={'/about'}>О НАС</AppLink></li>
-                <li><AppLink to={'/posts'}>КОНТАКТЫ</AppLink></li>
+                <li>
+                    <AppLink to={'/'}>МАГАЗИН</AppLink>
+                </li>
+                <li>
+                    <AppLink to={'/about'}>О НАС</AppLink>
+                </li>
+                <li>
+                    <AppLink to={'/posts'}>КОНТАКТЫ</AppLink>
+                </li>
             </ul>
 
             {/* Логотип компании */}
