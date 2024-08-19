@@ -1,0 +1,29 @@
+.loader {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    animation:
+        fadeBlink 1.5s ease-in-out infinite,
+        jump 0.5s ease-in-out infinite alternate;
+
+    // Анимация плавного мигания
+    @keyframes fadeBlink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    // Анимация небольшого прыжка
+    @keyframes jump {
+        to {
+            transform: translateY(-5%);
+        }
+    }
+}
