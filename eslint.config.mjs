@@ -25,6 +25,7 @@ export default [
         },
       ],
       "react/react-in-jsx-scope": "off", // Отключает требование импортировать React в файлах с JSX (не нужно с React 17+)
+      "react/prop-types": "off", // Отключает требование импортировать PropTypes в файлах с JSX
       "react/jsx-max-props-per-line": ["error", { maximum: 3 }], // Ограничивает максимальное количество свойств в одной строке
       "no-unused-vars": "off", // Отключает правило о неиспользуемых переменных (для лучшей работы с TypeScript)
       "@typescript-eslint/no-unused-vars": "warn", // Включает предупреждения для неиспользуемых переменных в TypeScript
