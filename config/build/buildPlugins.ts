@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BuildOptions} from "./types/config";
 import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 /**
  * Создает массив плагинов для Webpack на основе предоставленных параметров сборки.
@@ -48,6 +49,12 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         plugins.push(new webpack.HotModuleReplacementPlugin())
         // Поддержка React Fast Refresh только для новых версий React
         plugins.push(new ReactRefreshPlugin())
+        // Плагин для анализа бандла
+        plugins.push(new BundleAnalyzerPlugin({
+            analyzerMode: 'static', // Генерация отчета в виде HTML-файла
+            openAnalyzer: false, // Автоматически не открывать отчет после сборки
+            reportFilename: 'bundle-report.html', // Название HTML-файла
+        }));
     }
 
     // Добавление плагинов для продакшена
