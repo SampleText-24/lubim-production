@@ -11,7 +11,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+        <div
+            data-testid='sidebar'
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
+        >
             <Button onClick={() => setCollapsed((prev) => !prev)}>toggle</Button>
         </div>
     );
