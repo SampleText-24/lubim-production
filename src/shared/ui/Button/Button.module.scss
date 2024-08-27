@@ -1,12 +1,49 @@
 .btn {
-  cursor: pointer;
-  color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 0.875rem; /* slightly larger font for better readability */
+    letter-spacing: 0.05rem;
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &.textAnimation:hover span {
+        display: inline-block;
+        position: relative;
+        animation: button-hover 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 }
 
 .clear {
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none;
-  outline: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.outline {
+    border-radius: 0.25rem;
+    background: transparent;
+    padding: 5px 20px;
+    border: 1px solid var(--text-color);
+}
+
+/* Анимация текста */
+@keyframes button-hover {
+    0% {
+        transform: translateY(0);
+    }
+
+    49% {
+        transform: translateY(-24px);
+    }
+
+    51% {
+        transform: translateY(24px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
