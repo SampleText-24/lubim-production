@@ -15,7 +15,7 @@ describe('Sidebar', () => {
     it('have collapsed class when toggle button is clicked', () => {
         renderWithTranslation(<Sidebar />);
         const sidebarElement = screen.getByTestId('sidebar');
-        const toggleButton = screen.getByText('toggle');
+        const toggleButton = screen.getByRole('button');
 
         // Проверка, что по умолчанию класс collapsed отсутствует
         expect(sidebarElement).not.toHaveClass('collapsed');
