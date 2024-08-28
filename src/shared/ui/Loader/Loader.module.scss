@@ -5,11 +5,11 @@
     color: var(--text-color);
     position: relative;
     animation:
-        fadeBlink 1.5s ease-in-out infinite,
+        fade-blink 1.5s ease-in-out infinite,
         jump 0.5s ease-in-out infinite alternate;
 
     // Анимация плавного мигания
-    @keyframes fadeBlink {
+    @keyframes fade-blink {
         0%,
         100% {
             opacity: 1;
