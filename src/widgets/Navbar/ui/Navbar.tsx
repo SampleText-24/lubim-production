@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
     className?: string;
@@ -17,18 +18,20 @@ interface NavbarProps {
  * @param className - Дополнительный класс для стилизации Navbar.
  */
 export const Navbar: FC<NavbarProps> = ({ className }) => {
+    const { t } = useTranslation();
+
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
             {/* Список навигационных ссылок */}
             <ul className={cls.links}>
                 <li>
-                    <AppLink to={'/'}>МАГАЗИН</AppLink>
+                    <AppLink to={'/'}>{t('МАГАЗИН')}</AppLink>
                 </li>
                 <li>
-                    <AppLink to={'/about'}>О НАС</AppLink>
+                    <AppLink to={'/about'}>{t('О НАС')}</AppLink>
                 </li>
                 <li>
-                    <AppLink to={'/posts'}>КОНТАКТЫ</AppLink>
+                    <AppLink to={'/posts'}>{t('КОНТАКТЫ')}</AppLink>
                 </li>
             </ul>
 
@@ -37,8 +40,8 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
 
             {/* Список иконок социальных сетей */}
             <ul className={cls.icons}>
-                <li>ig</li>
-                <li>fb</li>
+                <li>{t('ig')}</li>
+                <li>{t('fb')}</li>
                 <li>
                     <LangSwitcher />
                 </li>
