@@ -1,4 +1,5 @@
 .btn {
+    padding: 5px 20px;
     text-transform: uppercase;
     font-size: 0.875rem; /* slightly larger font for better readability */
     letter-spacing: 0.05rem;
@@ -25,8 +26,35 @@
 .outline {
     border-radius: 0.25rem;
     background: transparent;
-    padding: 5px 20px;
     border: 1px solid var(--text-color);
+}
+
+.filled {
+    border: none;
+    border-radius: 0.25rem;
+    background: var(--accent-color);
+    color: var(--background-color);
+}
+
+.small {
+    font-size: var(--font-size-s);
+}
+
+.medium {
+    font-size: var(--font-size-m);
+}
+
+.large {
+    font-size: var(--font-size-l);
+}
+
+.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.fullWidth {
+    width: 100%;
 }
 
 /* Анимация текста */
