@@ -1,10 +1,11 @@
 .themeSwitcher {
-  inline-size: 1.3rem;
-  block-size: 1.3rem;
-  aspect-ratio: 1;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  & svg {
-    fill: var(--text-color);  // Цвет иконки
-  }
+    & svg {
+        max-width: 1.2rem;
+        max-height: 1.2rem;
+        display: block;
+    }
 }

@@ -12,6 +12,16 @@ interface NavbarProps {
     className?: string;
 }
 
+interface SocialIcons {
+    label: string | null;
+    Component: React.FC | null;
+}
+
+interface NavLinks {
+    path: string;
+    label: string;
+}
+
 /**
  * Компонент Navbar представляет собой панель навигации, которая включает ссылки на основные разделы сайта,
  * а также иконки социальных сетей.
@@ -21,19 +31,28 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ className }) => {
     const { t } = useTranslation();
 
+    const navLinks: NavLinks[] = [
+        { path: RouterPath.main, label: t('МАГАЗИН') },
+        { path: RouterPath.about, label: t('О НАС') },
+        { path: '/posts', label: t('КОНТАКТЫ') },
+    ];
+
+    const socialIcons: SocialIcons[] = [
+        { label: t('ig'), Component: null },
+        { label: t('fb'), Component: null },
+        { label: null, Component: LangSwitcher },
+        { label: null, Component: ThemeSwitcher },
+    ];
+
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
             {/* Список навигационных ссылок */}
             <ul className={cls.links}>
-                <li>
-                    <AppLink to={RouterPath.main}>{t('МАГАЗИН')}</AppLink>
-                </li>
-                <li>
-                    <AppLink to={RouterPath.about}>{t('О НАС')}</AppLink>
-                </li>
-                <li>
-                    <AppLink to={'/posts'}>{t('КОНТАКТЫ')}</AppLink>
-                </li>
+                {navLinks.map(({ path, label }) => (
+                    <li key={path}>
+                        <AppLink to={path}>{label || path}</AppLink>
+                    </li>
+                ))}
             </ul>
 
             {/* Логотип компании */}
@@ -41,14 +60,11 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
 
             {/* Список иконок социальных сетей */}
             <ul className={cls.icons}>
-                <li>{t('ig')}</li>
-                <li>{t('fb')}</li>
-                <li>
-                    <LangSwitcher />
-                </li>
-                <li>
-                    <ThemeSwitcher />
-                </li>
+                {socialIcons.map(({ label, Component }, index) => (
+                    <li key={index} aria-label={label || undefined}>
+                        {Component ? <Component /> : label}
+                    </li>
+                ))}
             </ul>
         </header>
     );
