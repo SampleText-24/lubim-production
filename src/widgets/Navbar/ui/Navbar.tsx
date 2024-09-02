@@ -6,6 +6,7 @@ import cls from './Navbar.module.scss';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
+import { RouterPath } from 'app/providers/router/config/routeConfig/routeConfig';
 
 interface NavbarProps {
     className?: string;
@@ -25,10 +26,10 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
             {/* Список навигационных ссылок */}
             <ul className={cls.links}>
                 <li>
-                    <AppLink to={'/'}>{t('МАГАЗИН')}</AppLink>
+                    <AppLink to={RouterPath.main}>{t('МАГАЗИН')}</AppLink>
                 </li>
                 <li>
-                    <AppLink to={'/about'}>{t('О НАС')}</AppLink>
+                    <AppLink to={RouterPath.about}>{t('О НАС')}</AppLink>
                 </li>
                 <li>
                     <AppLink to={'/posts'}>{t('КОНТАКТЫ')}</AppLink>
