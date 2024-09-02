@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { Button, ButtonTheme } from './Button';
+import { Button, ButtonTheme, ButtonSize } from './Button';
 
 const meta = {
     title: 'ui/Button',
@@ -8,39 +7,95 @@ const meta = {
     parameters: {
         layout: 'fullscreen',
     },
-    argTypes: {},
-    args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// Clear Theme
 export const Clear: Story = {
     args: {
         theme: ButtonTheme.CLEAR,
-        children: 'Button',
+        children: 'Clear Button',
     },
 };
 
 export const ClearWithAnimation: Story = {
     args: {
         theme: ButtonTheme.CLEAR,
-        children: 'Button',
+        children: 'Clear Button with Animation',
         textAnimation: true,
     },
 };
 
+// Outline Theme
 export const Outline: Story = {
     args: {
         theme: ButtonTheme.OUTLINE,
-        children: 'Button',
+        children: 'Outline Button',
     },
 };
 
 export const OutlineWithAnimation: Story = {
     args: {
         theme: ButtonTheme.OUTLINE,
-        children: 'Button',
+        children: 'Outline Button with Animation',
         textAnimation: true,
+    },
+};
+
+// Filled Theme
+export const Filled: Story = {
+    args: {
+        theme: ButtonTheme.FILLED,
+        children: 'Filled Button',
+    },
+};
+
+export const FilledWithAnimation: Story = {
+    args: {
+        theme: ButtonTheme.FILLED,
+        children: 'Filled Button with Animation',
+        textAnimation: true,
+    },
+};
+
+// Sizes
+export const SmallSize: Story = {
+    args: {
+        size: ButtonSize.S,
+        children: 'Small Button',
+    },
+};
+
+export const MediumSize: Story = {
+    args: {
+        size: ButtonSize.M,
+        children: 'Medium Button',
+    },
+};
+
+export const LargeSize: Story = {
+    args: {
+        size: ButtonSize.L,
+        children: 'Large Button',
+    },
+};
+
+// Disabled state
+export const Disabled: Story = {
+    args: {
+        theme: ButtonTheme.OUTLINE,
+        children: 'Disabled Button',
+        disabled: true,
+    },
+};
+
+// Full width
+export const FullWidth: Story = {
+    args: {
+        theme: ButtonTheme.FILLED,
+        children: 'Full Width Button',
+        fullWidth: true,
     },
 };
