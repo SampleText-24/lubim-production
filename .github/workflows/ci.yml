@@ -62,6 +62,9 @@ jobs:
       - name: Generate loki HTML report
         run: npm run test:ui:report
 
+      - name: Move loki HTML report
+        run: mv .loki reports/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

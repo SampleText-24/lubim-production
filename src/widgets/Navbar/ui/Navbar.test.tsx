@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 import { Navbar } from './Navbar';
-import { renderWithTranslation } from 'shared/config/tests/renderWithTranslation/renderWithTranslation';
 import { componentRender } from 'shared/config/tests/ComponentRender/ComponentRender';
 
 describe('Navbar', () => {
