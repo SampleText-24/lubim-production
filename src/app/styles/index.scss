@@ -4,10 +4,14 @@
 @import 'themes/light';
 
 .app {
+    min-height: 100vh;
+}
+
+.app,
+.appModal {
     font: var(--font-s);
     background-color: var(--background-color);
     color: var(--text-color);
-    min-height: 100vh;
 }
 
 .contentPage {
